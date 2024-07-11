@@ -3,7 +3,7 @@ CREATE TABLE Person (
     name varchar(50),
     surname varchar(50),
     patronymic varchar(50),
-    year_of_birth int,
+    year_of_birth int check (year_of_birth > 1900),
     CONSTRAINT unique_index_name_surname_patronymic UNIQUE (name, surname, patronymic)
 );
 
@@ -12,5 +12,5 @@ CREATE TABLE Book (
     owner_id int REFERENCES Person(id),
     title varchar(100),
     author varchar(50),
-    year int
+    year int check (year > 0)
 )
