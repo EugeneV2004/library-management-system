@@ -23,8 +23,8 @@ public class ExceptionHandlerController {
         return "exceptions/404";
     }
 
-    @ExceptionHandler(BookOwnerFoundException.class)
-    public String handleException(BookOwnerFoundException exception, Model model) {
+    @ExceptionHandler(BookOwnerNotFoundException.class)
+    public String handleException(BookOwnerNotFoundException exception, Model model) {
         model.addAttribute("errorText", exception.getMessage());
         return "exceptions/404";
     }
