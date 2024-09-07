@@ -9,7 +9,7 @@ CREATE TABLE Person (
 
 CREATE TABLE Book (
     id serial primary key,
-    owner_id int REFERENCES Person(id),
+    owner_id int REFERENCES Person(id) on delete set null,
     title varchar(100),
     author varchar(50),
     year int check (year > 0)

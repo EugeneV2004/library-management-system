@@ -21,4 +21,8 @@ public class Person {
     @NotBlank(message = "Patronymic should not be empty")
     @Size(min = 2, max = 50, message = "Patronymic should be between 2 and 50 characters")
     private String patronymic;
+    @NotNull(message = "yearOfBirth should be not empty")
+    @Min(value = 0, message = "yearOfBirth should be greater then 0")
+    @Max(value = 2024)
+    private Integer yearOfBirth;
 }
